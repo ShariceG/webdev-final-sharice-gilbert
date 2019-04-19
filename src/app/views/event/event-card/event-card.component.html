@@ -1,0 +1,12 @@
+<div class="card p-3">
+  <img class="card-img-top" src="{{event.image}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title d-flex justify-content-center">{{event.name}}</h5>
+    <p class="card-text">{{event.description}}</p>
+    <p class="card-text"><small class="text-muted">{{event.capacity}} participants max</small></p>
+    <button class="btn btn-primary btn-block"
+            (click)="viewEvent()">View Event</button>
+    <button class="btn btn-danger btn-block" *ngIf="hostFlag"
+            (click)="editEvent()">Edit</button>
+  </div>
+</div>

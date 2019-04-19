@@ -1,0 +1,42 @@
+<nav class="navbar fixed-top navbar-red navbar-custom cl-text-white">
+  <div class="container-fluid">
+    <p>
+      <a (click)="profile()" class="navbar-link cl-text-white">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a class= "navbar-brand mb-0 h1 cl-icon-padding" (click)="returnEvents()" >
+        Events
+      </a>
+    </p>
+    <a *ngIf="hostFlag" (click)="newEvent()" class="cl-text-white">
+      <span class="fas fa-plus fa-pull-right"></span>
+    </a>
+  </div>
+</nav>
+
+<!--<div fxLayout="row wrap" class="d-flex justify-content-center">-->
+  <!--<div fxFlex = "30" *ngFor="let event of events" class="card-item">-->
+    <!--<app-event-card [ngStyle]="{'width':'300' + 'px'}" [event] = "event"></app-event-card>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="card-columns" >
+  <div *ngFor="let event of events ">
+      <app-event-card [ngStyle]="{'width':'300' + 'px'}" [event] = "event"></app-event-card>
+  </div>
+</div>
+
+
+
+<nav class="navbar fixed-bottom navbar-black d-flex flex-row-reverse cl-text-white">
+  <div class="p-2">
+    <a (click)="profile()" class="nav-text cl-text-white">
+      <span class="fas fa-user fontawsome_icon fa-pull-right"></span>
+    </a>
+  </div>
+  <div class="p-2">
+    <a (click)="search()" class="nav-text cl-text-white">
+      <span class="fas fa-search fontawsome_icon"></span>
+    </a>
+  </div>
+</nav>

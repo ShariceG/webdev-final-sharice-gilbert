@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <p>
+      <a (click)="eventList" class="cl-text-black cl-icon-padding">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a class="navbar-brand pull-left cl-icon-padding" (click)="eventNew()">Events</a>
+    </p>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <span class=" form-control alert alert-danger" *ngIf="errorFlag">
+      {{ errorMessage }}
+    </span>
+  <form (ngSubmit) = "createEvent()" #eventForm="ngForm">
+    <div class="form-group">
+      <label for="eventName">Name</label>
+      <input type="text"
+             name= "eventName"
+             class="form-control"
+             id="eventName"
+             ngModel required #eventName="ngModel"
+             placeholder="Event Name">
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date"
+             name="date"
+             class="form-control"
+             id="date"
+             ngModel required #date="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="text"
+             name = image
+             class="form-control"
+             id="image"
+             placeholder="Event Image URL"
+             ngModel required #image="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea type="text"
+             name = "description"
+             class="form-control"
+             id="description" rows="5"
+             placeholder="Event Description"
+             ngModel required #description="ngModel">
+      </textarea>
+    </div>
+    <div class="form-group">
+      <label for="capacity">Capacity</label>
+      <input type="number"
+             name = "capacity"
+             class="form-control"
+             id="capacity"
+             placeholder="Event Capacity"
+             ngModel required #capacity="ngModel">
+    </div>
+    <button class="btn btn-success btn-block"
+            type="submit"
+            [disabled] = "!eventForm.valid">Create Event</button>
+    <button class="btn btn-danger btn-block"
+       (click)="eventList()">Cancel</button>
+  </form>
+</div>
+
+
+
+<nav class="navbar navbar-light bg-light fixed-bottom d-flex flex-row-reverse">
+  <div class="p-2">
+    <a (click)="profile()" class="nav-text cl-text-black">
+      <span class="fas fa-user fontawsome_icon"></span>
+    </a>
+  </div>
+  <div class="p-2">
+    <a (click)="search()" class="nav-text cl-text-black">
+      <span class="fas fa-search fontawsome_icon"></span>
+    </a>
+  </div>
+</nav>

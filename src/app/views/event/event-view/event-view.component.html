@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <p>
+      <a href="event-list.html" class="cl-text-black cl-icon-padding">
+        <span class="fas fa-chevron-left"></span>
+      </a>
+      <a class="navbar-brand pull-left cl-icon-padding" href="#">Event</a>
+    </p>
+    <a href="event-list.html" class="cl-text-black">
+      <span class="fas fa-check fa-pull-right"></span>
+    </a>
+  </div>
+</nav>
+
+<div class="container-fluid justify-content-center">
+  <img class="img-responsive img-rounded cl-widget-images "
+       src="{{event.image}}">
+  <h1 class="form-group justify-content-center">
+    {{event.name}}
+  </h1>
+</div>
+
+<div class="container-fluid justify-content-center">
+  <div class="form-group">
+    {{date}}
+  </div>
+  <div class="form-group">
+    {{event.description}}
+  </div>
+  <div class="form-group">
+    {{attendees}}/{{event.capacity}}
+  </div>
+
+</div>
+
+
+
+
+<nav class="navbar navbar-light bg-light fixed-bottom d-flex flex-row-reverse">
+  <div class="p-2">
+    <a (click)="profile()" class="nav-text cl-text-black">
+      <span class="fas fa-user fontawsome_icon"></span>
+    </a>
+  </div>
+  <div class="p-2">
+    <a (click)="search()" class="nav-text cl-text-black">
+      <span class="fas fa-search fontawsome_icon"></span>
+    </a>
+  </div>
+</nav>
