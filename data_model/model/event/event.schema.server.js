@@ -7,7 +7,7 @@ var eventSchema = new mongoose.Schema({
   date: Date,
   description: String,
   image: String,
-  attendees:[userSchema],
+  attendees:[String],
   capacity: Number
 }, {collection:'Events'});
 

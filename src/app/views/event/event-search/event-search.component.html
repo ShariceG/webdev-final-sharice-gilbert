@@ -4,15 +4,26 @@
       <a href="event-list.html" class="cl-text-black cl-icon-padding">
         <span class="fas fa-chevron-left"></span>
       </a>
-      <a class="navbar-brand pull-left cl-icon-padding" href="#">Event</a>
+      <a class="navbar-brand pull-left cl-icon-padding" href="#">Search Events</a>
     </p>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
 
+
+<div class="d-flex justify-content-center align-items-center">
+  <div class="container-fluid">
+    <form class="form-inline" (ngSubmit) = "search()" #searchForm="ngForm">
+      <input name="searchStr" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ngModel searchStr="ngModel">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="card-columns" >
+  <div *ngFor="let event of events ">
+    <app-event-card [ngStyle]="{'width':'300' + 'px'}" [event] = "event"></app-event-card>
+  </div>
+</div>
 
 
 

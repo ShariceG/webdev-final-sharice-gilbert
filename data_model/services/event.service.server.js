@@ -126,4 +126,20 @@ module.exports=function(app) {
        );
   }
 
+  // function joinEvent(req, res) {
+  //   let eventId = req.params.eventId;
+  //   let body = req.body
+  //   eventModel.updateEvent(eventId, body)
+  //     .then(
+  //       function(event){
+  //         if(event) {
+  //           res.status(200).send(event);
+  //         }
+  //       },
+  //       function(error) {
+  //         res.status(400).send(errror);
+  //       }
+  //     );
+  // }
+
 };

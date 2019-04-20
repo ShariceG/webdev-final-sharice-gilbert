@@ -26,7 +26,7 @@ export class EventService {
     'findEventsByDate': this.findEventsByDate,
     'updateEvent': this.updateEvent,
     'deleteEvent': this.deleteEvent
-  }
+  };
 
   createEvent(userId: string, body: any) {
     return this._http.post(this.baseUrl + 'api/user/' + userId + '/event' , body)
@@ -86,6 +86,13 @@ export class EventService {
 
   deleteEvent(eventId: String) {
     return this._http.delete(this.baseUrl + 'api/event/' + eventId);
+  }
+
+  leaveEvent(eventId: string, list) {
+    const body = {
+      attendees: list
+    };
+    return this.updateEvent(eventId, body);
   }
 
 }
