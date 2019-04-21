@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { QuillModule } from 'ngx-quill'
 
 
 import { AppComponent } from './app.component';
@@ -40,7 +41,8 @@ import { EventCardComponent } from './views/event/event-card/event-card.componen
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    QuillModule
   ],
   providers: [UserService, EventService],
   bootstrap: [AppComponent]

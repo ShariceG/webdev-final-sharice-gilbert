@@ -14,11 +14,18 @@ module.exports = function(app){
   app.delete('/api/user/:userId', deleteUser);
 
   var FacebookConfig = {
-    clientID: process.env.FACEBOOK_CLIENT_ID,
-    clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK
+    clientID: '2715556651847939',
+    clientSecret: '30a3dcd74ab440903b2344f6011d33ff',
+    callbackURL: '/auth/facebook/callback'
 
   };
+
+  // var FacebookConfig = {
+  //   clientID: process.env.FACEBOOK_CLIENT_ID,
+  //   clientSecret: process.env.FACEBOOK_SECRET,
+  //   callbackURL: process.env.FACEBOOK_CALLBACK
+  //
+  // };
 
   passport.use(new FacebookStrategy(FacebookConfig, facebookStrategy))
 
