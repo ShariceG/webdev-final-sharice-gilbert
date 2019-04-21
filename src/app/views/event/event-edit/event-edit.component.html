@@ -1,10 +1,10 @@
-<nav class="navbar navbar-grey  navbar-custom fixed-top">
+<nav class="navbar navbar-grey  navbar-custom fixed-top cl-text-white">
   <div class="container-fluid">
     <p>
       <a (click)="eventList()" class="cl-text-white cl-icon-padding">
         <span class="fas fa-chevron-left"></span>
       </a>
-      <a class="navbar-brand pull-left cl-icon-padding" href="#">Edit Event</a>
+      <a class="navbar-brand pull-left cl-icon-padding" (click)="eventEdit()">Edit Event</a>
     </p>
     <a (click)="eventForm.ngSubmit.emit()" class="cl-text-white">
       <span class="fas fa-check fa-pull-right"></span>

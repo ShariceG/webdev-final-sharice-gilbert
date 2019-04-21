@@ -91,6 +91,9 @@ export class EventEditComponent implements OnInit {
   eventList() {
     this.router.navigate(['/user', this.userId, 'event']);
   }
+  eventEdit() {
+    this.router.navigate(['/user', this.userId, 'event', this.eventId, 'edit']);
+  }
 
   profile() {
     this.router.navigate(['/user', this.userId]);

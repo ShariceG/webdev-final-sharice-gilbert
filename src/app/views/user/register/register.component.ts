@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
     this.role = this.registerForm.value.role;
 
     if (this.vpass === this.password) {
-      this.userService.createUser(this.username, this.password, this.role)
+      this.userService.register(this.username, this.password, this.role)
         .subscribe(
           (data: any) => {
             this.user = data;
@@ -50,5 +50,10 @@ export class RegisterComponent implements OnInit {
       this.errorFlag = true;
     }
   }
+
+  login() {
+    this.router.navigate(['/login']);
+  }
+
 
 }

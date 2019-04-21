@@ -17,12 +17,13 @@ export class EventSearchComponent implements OnInit {
   userId: string;
   events: any;
   hostFlag: boolean;
-
+  noEventFlag: boolean;
 
 
   ngOnInit() {
 
     this.events = [];
+    this.noEventFlag =  false;
 
     this.route.params.subscribe(
       (params: any) => {
@@ -56,8 +57,26 @@ export class EventSearchComponent implements OnInit {
       .subscribe(
         (data: any) => {
           this.events = data;
+          if (data.length === 0) {
+            this.noEventFlag = true;
+          } else {
+            this.noEventFlag =  false;
+          }
         }
       );
   }
+
+  profile() {
+    if (this.userId === '0') {
+      this.router.navigate(['/login']);
+    } else {
+      this.router.navigate(['/user', this.userId]);
+    }
+  }
+
+  searchPage() {
+    this.router.navigate(['/user', this.userId, 'search']);
+  }
+
 
 }

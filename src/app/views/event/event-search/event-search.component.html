@@ -1,10 +1,7 @@
 <nav class="navbar navbar-light bg-light justify-content-between fixed-top">
   <div class="container-fluid">
     <p>
-      <a href="event-list.html" class="cl-text-black cl-icon-padding">
-        <span class="fas fa-chevron-left"></span>
-      </a>
-      <a class="navbar-brand pull-left cl-icon-padding" href="#">Search Events</a>
+      <a class="navbar-brand pull-left cl-icon-padding" (click)="searchPage()">Search Events</a>
     </p>
   </div>
 </nav>
@@ -24,12 +21,15 @@
     <app-event-card [ngStyle]="{'width':'300' + 'px'}" [event] = "event"></app-event-card>
   </div>
 </div>
+<span class=" form-control alert alert-danger" *ngIf="noEventFlag">
+      No Events Found!
+    </span>
 
 
 
 <nav class="navbar navbar-light bg-light fixed-bottom d-flex flex-row-reverse">
   <div class="p-2">
-    <a href="profile.html" class="nav-text cl-text-black">
+    <a (click)="profile()" class="nav-text cl-text-black">
       <span class="fas fa-user fontawsome_icon"></span>
     </a>
   </div>

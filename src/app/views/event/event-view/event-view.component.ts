@@ -208,5 +208,12 @@ export class EventViewComponent implements OnInit {
 
   }
 
+  eventView() {
+    this.router.navigate(['/user', this.user._id, 'event', this.eventId]);
+  }
+
+  editEvent() {
+    this.router.navigate(['/user', this.user._id, 'event', this.eventId, 'edit']);
+  }
 
 }
